@@ -19,7 +19,7 @@ def styleArrayAddition(hashMapUniquesubjects):
         newK = newK.replace(")", "-")
 
         styleArray.append("." + newK + "{ color: rgb(" + str(r) +", " + str(g) + ", " + str(b)  +"); }")
-        styleArray.append("." + newK + ":hover{ text-decoration: underline; font-size: 25px; background-color: black; color: white; border-radius: 30px; width: auto}")
+        styleArray.append("." + newK + ":hover{ text-decoration: underline; font-size: 25px; background-color: black; color: white; border-radius: 30px; width: auto; cursor:pointer;}")
 
     styleArray.append("</style>")
 
