@@ -50,13 +50,6 @@ def handlePageData():
         return "Data Exhausted"
 
     return pageData.dataForThePage(pageIndex, styleArray, contentPerPage, data, hashMap)
-    
-    
-@app.route('/')
-def hello_world():
-    pageIndex = 0
-    return pageData.dataForThePage(pageIndex, styleArray, contentPerPage, data, hashMap)
-    # return dataForThePage(pageIndex)
 
 if __name__ == '__main__':
     app.run()
