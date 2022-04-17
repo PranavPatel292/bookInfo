@@ -3,6 +3,7 @@
 # manipulation has been performed in order to work with CSS naming conversion.
 
 # this function return an array of all the unique subject names for a single record.
+import copy
 
 def subjectOperations(data):
     tempHashMap = {}
@@ -11,15 +12,15 @@ def subjectOperations(data):
 
     for sD in data:
 
-        noSpace = sD.replace(" ", "")
-        
-        if noSpace[-1] == ".":
-            noSpace1 = noSpace[:-1]
+        if sD[-1] == ".":
+            noSpace = sD[:-1]
 
         else:
-            noSpace1 = noSpace
+            noSpace = sD
 
-        stringToDisplay = noSpace1
+        stringToDisplay = list(noSpace)
+
+        noSpace1 = noSpace.replace(" ", "")
 
         if noSpace1 not in tempHashMap:
 
@@ -27,7 +28,7 @@ def subjectOperations(data):
             noSpace1 = noSpace1.replace("(", "-")
             noSpace1 = noSpace1.replace(")", "-")
 
-            span = "<span class='" +noSpace1+"'>" +str(counter) +") " + stringToDisplay +"</span><br>"
+            span = "<span class='" +noSpace1+"'>" +str(counter) +") " + "".join(stringToDisplay) +"</span><br>"
             
             result.append(span)
             counter += 1
