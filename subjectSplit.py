@@ -22,9 +22,11 @@ def subjectOperations(data):
 
         noSpace1 = noSpace.replace(" ", "")
 
-        if noSpace1 not in tempHashMap:
+        comapreHashMapStrings = noSpace1.lower()
 
-            tempHashMap[noSpace1] = True
+        if comapreHashMapStrings not in tempHashMap:
+
+            tempHashMap[comapreHashMapStrings] = True
             noSpace1 = noSpace1.replace("(", "-")
             noSpace1 = noSpace1.replace(")", "-")
 
