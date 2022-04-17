@@ -28,6 +28,8 @@ def dataForThePage(page, styleArray, contentPerPage, data, hashMap):
                 elif dK == "Subjects":
 
                     splitData = data[i]["Subjects"].split(";")
+                    
+                    splitData.sort()
 
                     pushElement = subjectSplit.subjectOperations(splitData)
 

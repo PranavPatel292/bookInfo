@@ -7,6 +7,7 @@
 def subjectOperations(data):
     tempHashMap = {}
     result = []
+    counter = 1
 
     for sD in data:
 
@@ -14,8 +15,11 @@ def subjectOperations(data):
         
         if noSpace[-1] == ".":
             noSpace1 = noSpace[:-1]
+
         else:
             noSpace1 = noSpace
+
+        stringToDisplay = noSpace1
 
         if noSpace1 not in tempHashMap:
 
@@ -23,8 +27,9 @@ def subjectOperations(data):
             noSpace1 = noSpace1.replace("(", "-")
             noSpace1 = noSpace1.replace(")", "-")
 
-            span = "<span class='" +noSpace1+"'>" + sD +"</span><br>"
+            span = "<span class='" +noSpace1+"'>" +str(counter) +") " + stringToDisplay +"</span><br>"
             
             result.append(span)
-        
+            counter += 1
+
     return result

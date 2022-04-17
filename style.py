@@ -4,7 +4,7 @@
 
 import random
 
-styleArray = ["<style>table{border-collapse: collapse;width: 100%;}td, th{text-align: center;padding: 8px; font-size: 20px;}.idBook{width: 10%;}.titleBook{width: 30%;} .typeBook{width: 10%;} .subjectBook{width: 35%} .subSubjectBook{padding: 3%; color: brown;} tr:nth-child(even) {background-color: #f2f2f2;} .authorBook{width: 15%;}"]
+styleArray = ["<style>table{border-collapse: collapse;width: 100%;}td, th{text-align: center;padding: 4px; font-size: 20px;} th{background-color: green; color: white; padding:9px;}.idBook{width: 10%;}.titleBook{width: 30%;} .typeBook{width: 10%;} .subjectBook{width: 35%} .subSubjectBook{padding: 1%;} tr:nth-child(even) {background-color: #f2f2f2;} .authorBook{width: 15%;}"]
 
 def styleArrayAddition(hashMapUniquesubjects):
 
