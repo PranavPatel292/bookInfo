@@ -22,12 +22,11 @@ def dataForThePage(page, styleArray, contentPerPage, data, hashMap):
             if data[i][dK] != None:
 
                 # if title is the key add the copyright symbol if avaible
-                if dK == "title" and data[i]["copyrightdate"] != None:
+                if dK == "title" and data[i][dK] != None:
                     element = "<td class='" + hashMap[dK] + "'>" + data[i][dK]+ " &copy"+ str(data[i]["copyrightdate"]) +"</td>"
 
                 elif dK == "Subjects":
-
-                    splitData = data[i]["Subjects"].split(";")
+                    splitData = data[i][dK].split(";")
                     
                     splitData.sort()
 

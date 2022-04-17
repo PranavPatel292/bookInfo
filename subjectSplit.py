@@ -34,5 +34,4 @@ def subjectOperations(data):
             
             result.append(span)
             counter += 1
-
     return result
