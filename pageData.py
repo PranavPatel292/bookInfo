@@ -19,7 +19,7 @@ def dataForThePage(page, styleArray, contentPerPage, data, hashMap, limit):
     if page == limit:
         nextPageLink = ""
 
-    preFillHtmlText = ["<html><head></head><body>", "".join(styleArray), "<div><a href=' "+ nextPageLink+"' class='next-btn'>Next</a><a href='" + prevPageLink +"' class='back-btn'>Back</a><table><tr><th>Id Number</th><th>Book title</th><th>Author</th><th>Type</th><th>Subjects</th></tr>"]
+    preFillHtmlText = ["<html><head></head><body>", "".join(styleArray), "<div><a href='" + prevPageLink +"' class='next-btn'>Back</a><a href=' "+ nextPageLink+"' class='back-btn'>Next</a><table><tr><th>Id Number</th><th>Book title</th><th>Author</th><th>Type</th><th>Subjects</th></tr>"]
     
     dataArray = []
 
@@ -32,8 +32,11 @@ def dataForThePage(page, styleArray, contentPerPage, data, hashMap, limit):
             if data[i][dK] != None:
 
                 # if title is the key add the copyright symbol if avaible
-                if dK == "title" and data[i][dK] != None:
+                if dK == "title" and data[i][dK] != None and data[i]["copyrightdate"] != None:
                     element = "<td class='" + hashMap[dK] + "'>" + data[i][dK]+ " &copy"+ str(data[i]["copyrightdate"]) +"</td>"
+
+                elif dK == "title" and data[i][dK] != None and data[i]["copyrightdate"] == None:
+                    element = "<td class='" + hashMap[dK] + "'>" + data[i][dK]+ "</td>"
 
                 elif dK == "Subjects":
                     splitData = data[i][dK].split(";")
