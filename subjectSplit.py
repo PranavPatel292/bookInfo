@@ -30,7 +30,7 @@ def subjectOperations(data):
             noSpace1 = noSpace1.replace("(", "-")
             noSpace1 = noSpace1.replace(")", "-")
 
-            span = "<span class='" +noSpace1+"'>" +str(counter) +") " + "".join(stringToDisplay) +"</span><br>"
+            span = "<span class='" +noSpace1+"'>" +str(counter) +". " + "".join(stringToDisplay) +"</span><br>"
             
             result.append(span)
             counter += 1
