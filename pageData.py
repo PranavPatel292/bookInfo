@@ -7,9 +7,19 @@
 
 import subjectSplit
 
-def dataForThePage(page, styleArray, contentPerPage, data, hashMap):
+def dataForThePage(page, styleArray, contentPerPage, data, hashMap, limit):
 
-    preFillHtmlText = ["<html><head></head><body>", "".join(styleArray), "<div><table><tr><th>Id Number</th><th>Book title</th><th>Author</th><th>Type</th><th>Subjects</th></tr>"]
+    
+    nextPageLink = "http://127.0.0.1:5000/getData?pageNumber=" + str(page + 1)
+    prevPageLink = "http://127.0.0.1:5000/getData?pageNumber=" + str(page - 1)
+
+    if page == 0:
+        prevPageLink = ""
+    
+    if page == limit:
+        nextPageLink = ""
+
+    preFillHtmlText = ["<html><head></head><body>", "".join(styleArray), "<div><a href=' "+ nextPageLink+"' class='next-btn'>Next</a><a href='" + prevPageLink +"' class='back-btn'>Back</a><table><tr><th>Id Number</th><th>Book title</th><th>Author</th><th>Type</th><th>Subjects</th></tr>"]
     
     dataArray = []
 

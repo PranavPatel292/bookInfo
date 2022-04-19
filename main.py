@@ -17,6 +17,7 @@ import pageData
 
 pageIndex = 0
 contentPerPage = 10
+
 hashMap = {
     "biblionumber" : "idBook",
     "title" : "titleBook",
@@ -49,7 +50,7 @@ def handlePageData():
     if pageIndex >= (len(data) / contentPerPage):
         return "Data Exhausted"
 
-    return pageData.dataForThePage(pageIndex, styleArray, contentPerPage, data, hashMap)
+    return pageData.dataForThePage(pageIndex, styleArray, contentPerPage, data, hashMap, (len(data) / contentPerPage))
 
 if __name__ == '__main__':
     app.run()
